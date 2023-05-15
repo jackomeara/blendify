@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/blendify/static/css/main.df2b36fb.css",
-    "main.js": "/blendify/static/js/main.aa5c0f72.js",
+    "main.js": "/blendify/static/js/main.d19ee8ce.js",
     "static/media/logo.png": "/blendify/static/media/logo.6e3d578d5763900b7b8c.png",
     "index.html": "/blendify/index.html",
     "main.df2b36fb.css.map": "/blendify/static/css/main.df2b36fb.css.map",
-    "main.aa5c0f72.js.map": "/blendify/static/js/main.aa5c0f72.js.map"
+    "main.d19ee8ce.js.map": "/blendify/static/js/main.d19ee8ce.js.map"
   },
   "entrypoints": [
     "static/css/main.df2b36fb.css",
-    "static/js/main.aa5c0f72.js"
+    "static/js/main.d19ee8ce.js"
   ]
 }
