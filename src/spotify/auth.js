@@ -1,6 +1,7 @@
 export const authEndpoint = 'https://accounts.spotify.com/authorize';
 
-const redirectURI = 'http://localhost:3000/blend';
+// const redirectURI = 'http://localhost:3000/blend';
+const redirectURI = 'https://jackomeara.github.io/blendify/'
 
 const clientID = process.env.REACT_APP_CLIENT_ID;
 

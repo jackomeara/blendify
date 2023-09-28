@@ -9,7 +9,7 @@ const StyledBody = styled.p`
     font-size: 20px;
     text-align: center;
 `
-function Success() {
+function Success({setPage}) {
   return (
     <div style={{    width: "70vw",
     minHeight: "70vh",
@@ -24,7 +24,7 @@ function Success() {
       <StyledBody>
         Go to Spotify to listen to your new playlist, or create another below.
       </StyledBody>
-      <Button sx={{maxWidth: '150px', textAlign: 'center', margin: '20px auto'}} variant="contained">New</Button>
+      <Button sx={{maxWidth: '150px', textAlign: 'center', margin: '20px auto'}} variant="contained" onClick={() => setPage(1)}>New</Button>
 
     </div>
   );

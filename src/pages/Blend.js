@@ -6,7 +6,6 @@ import AddSeed from "../components/AddSeed";
 import SeedCard from "../components/SeedCard";
 import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 import HelpDialog from "../components/HelpDialog";
-import { useNavigate } from "react-router-dom";
 
 const styles = {
   main: {
@@ -37,8 +36,7 @@ const styles = {
   }
 };
 
-function Blend() {
-    const navigate = useNavigate();
+function Blend({setPage}) {
   const spotify = new SpotifyWebApi();
   const [spotifyToken, setSpotifyToken] = useState();
   const [playlistName, setPlaylistName] = useState('');
@@ -75,6 +73,7 @@ function Blend() {
   };
 
   const createPlaylist = () => {
+    console.log('creating playlist...')
     setErrorMsg('')
     if(playlistName.length == 0){
         setErrorMsg('You must enter a playlist name')
@@ -93,6 +92,7 @@ function Blend() {
         } else {
             query.seed_artists += seed.id+',';
         }
+    })
     spotify.getRecommendations(query)
     .then(data => {
         let songs = data.tracks.map(track => track.uri);
@@ -103,12 +103,11 @@ function Blend() {
                 spotify.addTracksToPlaylist(data.id, songs)
                 .then(data => {
                     console.log(data);
-                    navigate('/success')
+                    setPage(2)
                 })
             })
         })
-    })
-    });
+      });
   }
 
   return (

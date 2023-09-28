@@ -1,5 +1,9 @@
 import { loginURL } from "./spotify/auth";
 import { Typography, Button } from "@mui/material";
+import { useEffect, useState } from "react";
+import Landing from './pages/Landing';
+import Blend from './pages/Blend';
+import Success from './pages/Success';
 
 const styles = {
   app: {
@@ -8,13 +12,11 @@ const styles = {
 }
 
 function App() {
+  const [page, setPage] = useState(0);
+  const pages = [<Landing setPage={setPage} /> , <Blend setPage={setPage} /> , <Success setPage={setPage} /> ];
   return (
-    <div className="App" style={styles.app}>
-      <Typography variant="h1" color='primary' sx={styles.title} >Blendify</Typography>
-      <Typography>Create a </Typography>
-      <Button href={loginURL} variant="contained" sx={styles.start} >Start</Button>
-    </div>
-  );
+    pages[page]
+    )
 }
 
 export default App;
